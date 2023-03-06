@@ -1,3 +1,0 @@
-Option_A
-Option_B
-Option_C
