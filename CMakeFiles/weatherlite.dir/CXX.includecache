@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/under-the-c-desktop/include/Menu.h
+iostream
+-
+string
+-
+
+/workspaces/under-the-c-desktop/src/Menu.cpp
+iostream
+-
+fstream
+-
+string
+-
+../include/Menu.h
+/workspaces/under-the-c-desktop/include/Menu.h
+
+/workspaces/under-the-c-desktop/src/main.cpp
+iostream
+-
+../include/Menu.h
+/workspaces/under-the-c-desktop/include/Menu.h
+

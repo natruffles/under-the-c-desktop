@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#include "Menu.h"
+#include "../include/Menu.h"
 
 void Menu::menuNavigator(){
     int redo = 1;

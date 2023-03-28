@@ -1,0 +1,3 @@
+/workspaces/under-the-c-desktop/CMakeFiles/rebuild_cache.dir
+/workspaces/under-the-c-desktop/CMakeFiles/edit_cache.dir
+/workspaces/under-the-c-desktop/CMakeFiles/weatherlite.dir
