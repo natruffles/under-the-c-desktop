@@ -3,9 +3,11 @@
 
 #include <string>
 
-using namespace std;
-
 #include "../include/Menu.h"
+#include "../include/json.hpp"
+
+using namespace std;
+using json = nlohmann::json;
 
 void Menu::menuNavigator(){
     int redo = 1;
@@ -24,7 +26,6 @@ void Menu::menuNavigator(){
             case 1:
                 getWifi();
                 redo = redoChecker();
-
                 break;
 
             case 2:
@@ -62,11 +63,28 @@ int Menu::redoChecker(){
     }
     else if (tempChoice == "N")
     {
+        jsonCreator();
+        cout << "Values saved under \"weatherliteData.json\" " << endl;
         return 0;
     }
     else{
         cout << "Input not understood. Exiting program." << endl;
+        cout << "Values saved under \"weatherliteData.json\" " << endl;
         return 0;
     }
 }
 
+void Menu::jsonCreator(){
+    json weatherliteData = {
+        {
+            {"wifiSSID", wifiSSID},
+            {"wifiPassword", wifiPassword},
+            {"locationZIP", locationZIP}
+        }
+    };
+
+    // write data to JSON file
+    std::ofstream o("weatherliteData.json");
+    o << std::setw(4) << weatherliteData << std::endl;
+
+}
