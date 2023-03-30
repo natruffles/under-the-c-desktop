@@ -3,9 +3,11 @@
 
 #include <string>
 
-using namespace std;
-
 #include "../include/Menu.h"
+#include "../include/json.hpp"
+
+using namespace std;
+using json = nlohmann::json;
 
 // This section details the operation of the main menu.  It takes no arguments and returns none.
 
@@ -63,21 +65,21 @@ void Menu::getLocation() {
   cin >> locationZIP;
 }
 
-// redoChecker is executed after each other funciton that can be chosen by the user from the menu
-// this function asks the user if they wish to interact with the menu again - if they choose not to,
-// the function returns 0 and ends the while loop of main execution
-
-int Menu::redoChecker() {
-  string tempChoice;
-  cout << "Would you like to enter the menu again? (Y/N)" << endl;
-  cin >> tempChoice;
-
-  if (tempChoice == "Y") {
-    return 1;
-  } else if (tempChoice == "N") {
-    return 0;
-  } else {
-    cout << "Input not understood. Exiting program." << endl;
-    return 0;
-  }
+int Menu::redoChecker(){
+    string tempChoice;
+    cout << "Would you like to enter the menu again? (Y/N)" << endl;
+    cin >> tempChoice;
+    
+    if (tempChoice == "Y"){
+        return 1;
+    }
+    else if (tempChoice == "N")
+    {
+        return 0;
+    }
+    else{
+        cout << "Input not understood. Exiting program." << endl;
+        return 0;
+    }
 }
+

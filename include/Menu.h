@@ -12,6 +12,8 @@ class Menu{
 
         int redoChecker();
 
+        void jsonCreator();
+
         int menuChoice;
 
         int wifiSSID;
