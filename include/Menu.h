@@ -16,9 +16,8 @@ class Menu{
 
         int menuChoice;
 
-        int wifiSSID;
-        string wifiPassword;
-
-        int locationZIP;
+        string wifiSSID = "unknown";
+        string wifiPassword = "unknown";
+        string locationZIP = "unknown";
 };
 
