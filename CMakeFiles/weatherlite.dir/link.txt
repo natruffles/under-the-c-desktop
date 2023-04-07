@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/weatherlite.dir/src/main.cpp.o CMakeFiles/weatherlite.dir/src/Menu.cpp.o -o weatherlite 
