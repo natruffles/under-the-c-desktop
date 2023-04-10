@@ -1,0 +1,11 @@
+# Hashes of file build rules.
+339fa5961056b4103f1c864922b6727c CMakeFiles/curl_uninstall
+136ef977e3564d10a09f3fc7f22a56b9 src/tool_hugehelp.c
+7f1f048c04372fe57dbb5ef5f2ec6ea6 tests/CMakeFiles/test-am
+320f2625358d63e7c424ee2664ab616b tests/CMakeFiles/test-ci
+695a29f100826b10ae187eeeb133be19 tests/CMakeFiles/test-event
+c78096afaf7dce567e6b7592a64afd1b tests/CMakeFiles/test-full
+5858e13f11f7233cb73dca1e217bcc52 tests/CMakeFiles/test-nonflaky
+787aad5e52ba9bbc535521b55d60f966 tests/CMakeFiles/test-quiet
+d69221b69cafabfc06b96ac991c79302 tests/CMakeFiles/test-torture
+0c3a463c3283f81395b1d93e34db13e4 tests/libtest/lib1521.c
