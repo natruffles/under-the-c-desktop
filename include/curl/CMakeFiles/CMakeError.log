@@ -1,0 +1,1392 @@
+Performing C SOURCE FILE Test OPTpedantic_ms_format failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_fade6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fade6.dir/build.make CMakeFiles/cmTC_fade6.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fade6.dir/src.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DOPTpedantic_ms_format   -Wpedantic-ms-format -o CMakeFiles/cmTC_fade6.dir/src.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command-line option '-Wpedantic-ms-format'
+gmake[1]: *** [CMakeFiles/cmTC_fade6.dir/build.make:85: CMakeFiles/cmTC_fade6.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_fade6/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_15ef2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_15ef2.dir/build.make CMakeFiles/cmTC_15ef2.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_15ef2.dir/src.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCMAKE_HAVE_LIBC_PTHREAD -o CMakeFiles/cmTC_15ef2.dir/src.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/src.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/src.c:3:7: warning: no previous prototype for ‘test_func’ [-Wmissing-prototypes]
+    3 | void* test_func(void* data)
+      |       ^~~~~~~~~
+Linking C executable cmTC_15ef2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15ef2.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCMAKE_HAVE_LIBC_PTHREAD CMakeFiles/cmTC_15ef2.dir/src.c.o -o cmTC_15ef2 
+/usr/bin/ld: CMakeFiles/cmTC_15ef2.dir/src.c.o: in function `main':
+src.c:(.text+0x2f): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x3b): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x47): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0x58): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_15ef2.dir/build.make:106: cmTC_15ef2] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_15ef2/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_64f76/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_64f76.dir/build.make CMakeFiles/cmTC_64f76.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_64f76.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_64f76.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_64f76
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64f76.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_64f76.dir/CheckFunctionExists.c.o -o cmTC_64f76  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_64f76.dir/build.make:106: cmTC_64f76] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_64f76/fast] Error 2
+
+
+
+Determining if the function connect exists in the socket;-lpthread failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_7c857/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7c857.dir/build.make CMakeFiles/cmTC_7c857.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7c857.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_7c857.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7c857
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c857.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_7c857.dir/CheckFunctionExists.c.o -o cmTC_7c857  -lsocket -lpthread 
+/usr/bin/ld: cannot find -lsocket
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_7c857.dir/build.make:106: cmTC_7c857] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_7c857/fast] Error 2
+
+
+
+Determining if the RAND_egd exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_7a668/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7a668.dir/build.make CMakeFiles/cmTC_7a668.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7a668.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_7a668.dir/CheckSymbolExists.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: error: ‘RAND_egd’ undeclared (first use in this function)
+    7 |   return ((int*)(&RAND_egd))[argc];
+      |                   ^~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:7:19: note: each undeclared identifier is reported only once for each function it appears in
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:3:14: warning: parameter ‘argc’ set but not used [-Wunused-but-set-parameter]
+    3 | int main(int argc, char** argv)
+      |          ~~~~^~~~
+gmake[1]: *** [CMakeFiles/cmTC_7a668.dir/build.make:85: CMakeFiles/cmTC_7a668.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_7a668/fast] Error 2
+
+
+File /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef RAND_egd
+  return ((int*)(&RAND_egd))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the OPENSSL_IS_BORINGSSL exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_b0b9d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b0b9d.dir/build.make CMakeFiles/cmTC_b0b9d.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b0b9d.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_b0b9d.dir/CheckSymbolExists.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: openssl/base.h: No such file or directory
+    2 | #include <openssl/base.h>
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_b0b9d.dir/build.make:85: CMakeFiles/cmTC_b0b9d.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_b0b9d/fast] Error 2
+
+
+File /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <openssl/base.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef OPENSSL_IS_BORINGSSL
+  return ((int*)(&OPENSSL_IS_BORINGSSL))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function ldap_init exists in the ldap;-lpthread;ZLIB::ZLIB;OpenSSL::SSL;OpenSSL::Crypto failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_00883/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_00883.dir/build.make CMakeFiles/cmTC_00883.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_00883.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=ldap_init -o CMakeFiles/cmTC_00883.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_00883
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00883.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=ldap_init CMakeFiles/cmTC_00883.dir/CheckFunctionExists.c.o -o cmTC_00883  -lldap -lpthread /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+/usr/bin/ld: cannot find -lldap
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_00883.dir/build.make:111: cmTC_00883] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_00883/fast] Error 2
+
+
+
+Determining if the function ber_init exists in the lber;-lpthread;ZLIB::ZLIB;OpenSSL::SSL;OpenSSL::Crypto failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_f00a9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f00a9.dir/build.make CMakeFiles/cmTC_f00a9.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f00a9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=ber_init -o CMakeFiles/cmTC_f00a9.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f00a9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f00a9.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=ber_init CMakeFiles/cmTC_f00a9.dir/CheckFunctionExists.c.o -o cmTC_f00a9  -llber -lpthread /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+/usr/bin/ld: cannot find -llber
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_f00a9.dir/build.make:111: cmTC_f00a9] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_f00a9/fast] Error 2
+
+
+
+Determining if files ;ldap.h exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5fc24/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5fc24.dir/build.make CMakeFiles/cmTC_5fc24.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5fc24.dir/HAVE_LDAP_H.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_5fc24.dir/HAVE_LDAP_H.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_LDAP_H.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_LDAP_H.c:2:10: fatal error: ldap.h: No such file or directory
+    2 | #include <ldap.h>
+      |          ^~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_5fc24.dir/build.make:85: CMakeFiles/cmTC_5fc24.dir/HAVE_LDAP_H.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_5fc24/fast] Error 2
+
+
+Source:
+/* */
+#include <ldap.h>
+
+
+int main(void){return 0;}
+
+Determining if files ;lber.h exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_61c00/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_61c00.dir/build.make CMakeFiles/cmTC_61c00.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_61c00.dir/HAVE_LBER_H.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_61c00.dir/HAVE_LBER_H.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_LBER_H.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_LBER_H.c:2:10: fatal error: lber.h: No such file or directory
+    2 | #include <lber.h>
+      |          ^~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_61c00.dir/build.make:85: CMakeFiles/cmTC_61c00.dir/HAVE_LBER_H.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_61c00/fast] Error 2
+
+
+Source:
+/* */
+#include <lber.h>
+
+
+int main(void){return 0;}
+
+Determining if the function idn2_lookup_ul exists in the idn2;-lpthread;ZLIB::ZLIB;OpenSSL::SSL;OpenSSL::Crypto failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_b80cc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b80cc.dir/build.make CMakeFiles/cmTC_b80cc.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b80cc.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=idn2_lookup_ul -o CMakeFiles/cmTC_b80cc.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b80cc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b80cc.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=idn2_lookup_ul CMakeFiles/cmTC_b80cc.dir/CheckFunctionExists.c.o -o cmTC_b80cc  -lidn2 -lpthread /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+/usr/bin/ld: cannot find -lidn2
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_b80cc.dir/build.make:111: cmTC_b80cc] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_b80cc/fast] Error 2
+
+
+
+Determining if files inttypes.h;sys/filio.h exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_29b85/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_29b85.dir/build.make CMakeFiles/cmTC_29b85.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_29b85.dir/HAVE_SYS_FILIO_H.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_29b85.dir/HAVE_SYS_FILIO_H.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_SYS_FILIO_H.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_SYS_FILIO_H.c:3:10: fatal error: sys/filio.h: No such file or directory
+    3 | #include <sys/filio.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_29b85.dir/build.make:85: CMakeFiles/cmTC_29b85.dir/HAVE_SYS_FILIO_H.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_29b85/fast] Error 2
+
+
+Source:
+/* */
+#include <inttypes.h>
+#include <sys/filio.h>
+
+
+int main(void){return 0;}
+
+Determining if files inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/sockio.h exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_cd651/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cd651.dir/build.make CMakeFiles/cmTC_cd651.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd651.dir/HAVE_SYS_SOCKIO_H.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_cd651.dir/HAVE_SYS_SOCKIO_H.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_SYS_SOCKIO_H.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_SYS_SOCKIO_H.c:9:10: fatal error: sys/sockio.h: No such file or directory
+    9 | #include <sys/sockio.h>
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_cd651.dir/build.make:85: CMakeFiles/cmTC_cd651.dir/HAVE_SYS_SOCKIO_H.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_cd651/fast] Error 2
+
+
+Source:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/sockio.h>
+
+
+int main(void){return 0;}
+
+Determining if files inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/un.h;sys/utime.h exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4dfd8/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4dfd8.dir/build.make CMakeFiles/cmTC_4dfd8.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4dfd8.dir/HAVE_SYS_UTIME_H.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_4dfd8.dir/HAVE_SYS_UTIME_H.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_SYS_UTIME_H.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_SYS_UTIME_H.c:13:10: fatal error: sys/utime.h: No such file or directory
+   13 | #include <sys/utime.h>
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_4dfd8.dir/build.make:85: CMakeFiles/cmTC_4dfd8.dir/HAVE_SYS_UTIME_H.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_4dfd8/fast] Error 2
+
+
+Source:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/utime.h>
+
+
+int main(void){return 0;}
+
+Determining if files inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/un.h;sys/xattr.h;arpa/inet.h;arpa/tftp.h;fcntl.h;idn2.h exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_9983e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9983e.dir/build.make CMakeFiles/cmTC_9983e.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9983e.dir/HAVE_IDN2_H.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_9983e.dir/HAVE_IDN2_H.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_IDN2_H.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_IDN2_H.c:17:10: fatal error: idn2.h: No such file or directory
+   17 | #include <idn2.h>
+      |          ^~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_9983e.dir/build.make:85: CMakeFiles/cmTC_9983e.dir/HAVE_IDN2_H.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_9983e/fast] Error 2
+
+
+Source:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/xattr.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <fcntl.h>
+#include <idn2.h>
+
+
+int main(void){return 0;}
+
+Determining if files inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/un.h;sys/xattr.h;arpa/inet.h;arpa/tftp.h;fcntl.h;ifaddrs.h;io.h exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_c299c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c299c.dir/build.make CMakeFiles/cmTC_c299c.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c299c.dir/HAVE_IO_H.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_c299c.dir/HAVE_IO_H.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_IO_H.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_IO_H.c:18:10: fatal error: io.h: No such file or directory
+   18 | #include <io.h>
+      |          ^~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_c299c.dir/build.make:85: CMakeFiles/cmTC_c299c.dir/HAVE_IO_H.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_c299c/fast] Error 2
+
+
+Source:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/xattr.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <io.h>
+
+
+int main(void){return 0;}
+
+Determining if files inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/un.h;sys/xattr.h;arpa/inet.h;arpa/tftp.h;fcntl.h;ifaddrs.h;libgen.h;locale.h;net/if.h;netdb.h;netinet/in.h;netinet/tcp.h;poll.h;pwd.h;setjmp.h;signal.h;ssl.h exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_0f318/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0f318.dir/build.make CMakeFiles/cmTC_0f318.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f318.dir/HAVE_SSL_H.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_0f318.dir/HAVE_SSL_H.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_SSL_H.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_SSL_H.c:28:10: fatal error: ssl.h: No such file or directory
+   28 | #include <ssl.h>
+      |          ^~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_0f318.dir/build.make:85: CMakeFiles/cmTC_0f318.dir/HAVE_SSL_H.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_0f318/fast] Error 2
+
+
+Source:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/xattr.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <signal.h>
+#include <ssl.h>
+
+
+int main(void){return 0;}
+
+Determining if files inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/un.h;sys/xattr.h;arpa/inet.h;arpa/tftp.h;fcntl.h;ifaddrs.h;libgen.h;locale.h;net/if.h;netdb.h;netinet/in.h;netinet/tcp.h;poll.h;pwd.h;setjmp.h;signal.h;stdatomic.h;stdbool.h;stdint.h;stdlib.h;string.h;strings.h;stropts.h exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6a367/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6a367.dir/build.make CMakeFiles/cmTC_6a367.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6a367.dir/HAVE_STROPTS_H.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_6a367.dir/HAVE_STROPTS_H.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_STROPTS_H.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckIncludeFiles/HAVE_STROPTS_H.c:34:10: fatal error: stropts.h: No such file or directory
+   34 | #include <stropts.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_6a367.dir/build.make:85: CMakeFiles/cmTC_6a367.dir/HAVE_STROPTS_H.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_6a367/fast] Error 2
+
+
+Source:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/xattr.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <signal.h>
+#include <stdatomic.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+
+
+int main(void){return 0;}
+
+Determining size of __int64 failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_552dd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_552dd.dir/build.make CMakeFiles/cmTC_552dd.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_552dd.dir/SIZEOF___INT64.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_552dd.dir/SIZEOF___INT64.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c:27:22: error: ‘__int64’ undeclared here (not in a function); did you mean ‘__int64_t’?
+   27 | #define SIZE (sizeof(__int64))
+      |                      ^~~~~~~
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c:29:12: note: in expansion of macro ‘SIZE’
+   29 |   ('0' + ((SIZE / 10000)%10)),
+      |            ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_552dd.dir/build.make:85: CMakeFiles/cmTC_552dd.dir/SIZEOF___INT64.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_552dd/fast] Error 2
+
+
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__PPC64__)
+# define KEY '_','_','P','P','C','6','4','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__PPC__)
+# define KEY '_','_','P','P','C','_','_'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(__int64))
+static char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the stricmp exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_d2fae/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d2fae.dir/build.make CMakeFiles/cmTC_d2fae.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d2fae.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_d2fae.dir/CheckSymbolExists.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: error: ‘stricmp’ undeclared (first use in this function); did you mean ‘strncmp’?
+   46 |   return ((int*)(&stricmp))[argc];
+      |                   ^~~~~~~
+      |                   strncmp
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: note: each undeclared identifier is reported only once for each function it appears in
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:42:14: warning: parameter ‘argc’ set but not used [-Wunused-but-set-parameter]
+   42 | int main(int argc, char** argv)
+      |          ~~~~^~~~
+gmake[1]: *** [CMakeFiles/cmTC_d2fae.dir/build.make:85: CMakeFiles/cmTC_d2fae.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_d2fae/fast] Error 2
+
+
+File /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/xattr.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <signal.h>
+#include <stdatomic.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef stricmp
+  return ((int*)(&stricmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strcmpi exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_19771/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_19771.dir/build.make CMakeFiles/cmTC_19771.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_19771.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_19771.dir/CheckSymbolExists.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: error: ‘strcmpi’ undeclared (first use in this function); did you mean ‘strcmp’?
+   46 |   return ((int*)(&strcmpi))[argc];
+      |                   ^~~~~~~
+      |                   strcmp
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: note: each undeclared identifier is reported only once for each function it appears in
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:42:14: warning: parameter ‘argc’ set but not used [-Wunused-but-set-parameter]
+   42 | int main(int argc, char** argv)
+      |          ~~~~^~~~
+gmake[1]: *** [CMakeFiles/cmTC_19771.dir/build.make:85: CMakeFiles/cmTC_19771.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_19771/fast] Error 2
+
+
+File /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/xattr.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <signal.h>
+#include <stdatomic.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strcmpi
+  return ((int*)(&strcmpi))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the closesocket exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_2dda5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2dda5.dir/build.make CMakeFiles/cmTC_2dda5.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2dda5.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_2dda5.dir/CheckSymbolExists.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: error: ‘closesocket’ undeclared (first use in this function)
+   46 |   return ((int*)(&closesocket))[argc];
+      |                   ^~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: note: each undeclared identifier is reported only once for each function it appears in
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:42:14: warning: parameter ‘argc’ set but not used [-Wunused-but-set-parameter]
+   42 | int main(int argc, char** argv)
+      |          ~~~~^~~~
+gmake[1]: *** [CMakeFiles/cmTC_2dda5.dir/build.make:85: CMakeFiles/cmTC_2dda5.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_2dda5/fast] Error 2
+
+
+File /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/xattr.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <signal.h>
+#include <stdatomic.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef closesocket
+  return ((int*)(&closesocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the getpass_r exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_128df/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_128df.dir/build.make CMakeFiles/cmTC_128df.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_128df.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_128df.dir/CheckSymbolExists.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: error: ‘getpass_r’ undeclared (first use in this function); did you mean ‘getpass’?
+   46 |   return ((int*)(&getpass_r))[argc];
+      |                   ^~~~~~~~~
+      |                   getpass
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: note: each undeclared identifier is reported only once for each function it appears in
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:42:14: warning: parameter ‘argc’ set but not used [-Wunused-but-set-parameter]
+   42 | int main(int argc, char** argv)
+      |          ~~~~^~~~
+gmake[1]: *** [CMakeFiles/cmTC_128df.dir/build.make:85: CMakeFiles/cmTC_128df.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_128df/fast] Error 2
+
+
+File /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/xattr.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <signal.h>
+#include <stdatomic.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getpass_r
+  return ((int*)(&getpass_r))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the setmode exist failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_1f883/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1f883.dir/build.make CMakeFiles/cmTC_1f883.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1f883.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_1f883.dir/CheckSymbolExists.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: error: ‘setmode’ undeclared (first use in this function)
+   46 |   return ((int*)(&setmode))[argc];
+      |                   ^~~~~~~
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:46:19: note: each undeclared identifier is reported only once for each function it appears in
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:42:14: warning: parameter ‘argc’ set but not used [-Wunused-but-set-parameter]
+   42 | int main(int argc, char** argv)
+      |          ~~~~^~~~
+gmake[1]: *** [CMakeFiles/cmTC_1f883.dir/build.make:85: CMakeFiles/cmTC_1f883.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_1f883/fast] Error 2
+
+
+File /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <sys/xattr.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <signal.h>
+#include <stdatomic.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef setmode
+  return ((int*)(&setmode))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function mach_absolute_time exists failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_2aea7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2aea7.dir/build.make CMakeFiles/cmTC_2aea7.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2aea7.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=mach_absolute_time -o CMakeFiles/cmTC_2aea7.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2aea7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2aea7.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DCHECK_FUNCTION_EXISTS=mach_absolute_time CMakeFiles/cmTC_2aea7.dir/CheckFunctionExists.c.o -o cmTC_2aea7  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+/usr/bin/ld: CMakeFiles/cmTC_2aea7.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `mach_absolute_time'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_2aea7.dir/build.make:108: cmTC_2aea7] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_2aea7/fast] Error 2
+
+
+
+Performing Curl Test HAVE_FSETXATTR_6 failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_61b69/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_61b69.dir/build.make CMakeFiles/cmTC_61b69.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_61b69.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_FSETXATTR_6  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_61b69.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:422:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  422 | main() {
+      | ^~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:423:3: error: too many arguments to function ‘fsetxattr’
+  423 |   fsetxattr(0, 0, 0, 0, 0, 0);
+      |   ^~~~~~~~~
+In file included from /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:420:
+/usr/include/x86_64-linux-gnu/sys/xattr.h:54:12: note: declared here
+   54 | extern int fsetxattr (int __fd, const char *__name, const void *__value,
+      |            ^~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_61b69.dir/build.make:85: CMakeFiles/cmTC_61b69.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_61b69/fast] Error 2
+
+
+Determining size of ADDRESS_FAMILY failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_607fd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_607fd.dir/build.make CMakeFiles/cmTC_607fd.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_607fd.dir/SIZEOF_ADDRESS_FAMILY.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers  -o CMakeFiles/cmTC_607fd.dir/SIZEOF_ADDRESS_FAMILY.c.o -c /workspaces/under-the-c-desktop/curl/CMakeFiles/CheckTypeSize/SIZEOF_ADDRESS_FAMILY.c
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckTypeSize/SIZEOF_ADDRESS_FAMILY.c:4:10: fatal error: ws2def.h: No such file or directory
+    4 | #include "ws2def.h"
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_607fd.dir/build.make:85: CMakeFiles/cmTC_607fd.dir/SIZEOF_ADDRESS_FAMILY.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_607fd/fast] Error 2
+
+
+/workspaces/under-the-c-desktop/curl/CMakeFiles/CheckTypeSize/SIZEOF_ADDRESS_FAMILY.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+#include "ws2def.h"
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__PPC64__)
+# define KEY '_','_','P','P','C','6','4','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__PPC__)
+# define KEY '_','_','P','P','C','_','_'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(ADDRESS_FAMILY))
+static char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Performing Curl Test HAVE_IOCTLSOCKET failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_5dbe1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_5dbe1.dir/build.make CMakeFiles/cmTC_5dbe1.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5dbe1.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_5dbe1.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:216:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  216 | main ()
+      | ^~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:221:24: warning: implicit declaration of function ‘ioctlsocket’ [-Wimplicit-function-declaration]
+  221 |  unsigned long flags = ioctlsocket(socket, FIONBIO, &flags);
+      |                        ^~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:221:24: warning: nested extern declaration of ‘ioctlsocket’ [-Wnested-externs]
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:221:44: error: ‘FIONBIO’ undeclared (first use in this function)
+  221 |  unsigned long flags = ioctlsocket(socket, FIONBIO, &flags);
+      |                                            ^~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:221:44: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_5dbe1.dir/build.make:85: CMakeFiles/cmTC_5dbe1.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_5dbe1/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_78a34/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_78a34.dir/build.make CMakeFiles/cmTC_78a34.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78a34.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_78a34.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:241:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  241 | main ()
+      | ^~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:245:13: warning: implicit declaration of function ‘IoctlSocket’ [-Wimplicit-function-declaration]
+  245 |     if(0 != IoctlSocket(0, 0, 0))
+      |             ^~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:245:13: warning: nested extern declaration of ‘IoctlSocket’ [-Wnested-externs]
+Linking C executable cmTC_78a34
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78a34.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H CMakeFiles/cmTC_78a34.dir/CurlTests.c.o -o cmTC_78a34  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+/usr/bin/ld: CMakeFiles/cmTC_78a34.dir/CurlTests.c.o: in function `main':
+CurlTests.c:(.text+0x19): undefined reference to `IoctlSocket'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_78a34.dir/build.make:108: cmTC_78a34] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_78a34/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL_FIONBIO failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_78b5e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_78b5e.dir/build.make CMakeFiles/cmTC_78b5e.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78b5e.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET_CAMEL_FIONBIO  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_78b5e.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:264:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  264 | main ()
+      | ^~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:269:17: warning: implicit declaration of function ‘IoctlSocket’ [-Wimplicit-function-declaration]
+  269 |         if(0 != IoctlSocket(0, FIONBIO, &flags))
+      |                 ^~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:269:17: warning: nested extern declaration of ‘IoctlSocket’ [-Wnested-externs]
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:269:32: error: ‘FIONBIO’ undeclared (first use in this function)
+  269 |         if(0 != IoctlSocket(0, FIONBIO, &flags))
+      |                                ^~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:269:32: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_78b5e.dir/build.make:85: CMakeFiles/cmTC_78b5e.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_78b5e/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_FIONBIO failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_717be/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_717be.dir/build.make CMakeFiles/cmTC_717be.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_717be.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET_FIONBIO  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_717be.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:288:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  288 | main ()
+      | ^~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:292:17: warning: implicit declaration of function ‘ioctlsocket’ [-Wimplicit-function-declaration]
+  292 |         if(0 != ioctlsocket(0, FIONBIO, &flags))
+      |                 ^~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:292:17: warning: nested extern declaration of ‘ioctlsocket’ [-Wnested-externs]
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:292:32: error: ‘FIONBIO’ undeclared (first use in this function)
+  292 |         if(0 != ioctlsocket(0, FIONBIO, &flags))
+      |                                ^~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:292:32: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_717be.dir/build.make:85: CMakeFiles/cmTC_717be.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_717be/fast] Error 2
+
+
+Performing Curl Test HAVE_SETSOCKOPT_SO_NONBLOCK failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_16724/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_16724.dir/build.make CMakeFiles/cmTC_16724.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_16724.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_SETSOCKOPT_SO_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_16724.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:382:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  382 | main ()
+      | ^~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:384:43: error: ‘SO_NONBLOCK’ undeclared (first use in this function); did you mean ‘SOCK_NONBLOCK’?
+  384 |         if(0 != setsockopt(0, SOL_SOCKET, SO_NONBLOCK, 0, 0))
+      |                                           ^~~~~~~~~~~
+      |                                           SOCK_NONBLOCK
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:384:43: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_16724.dir/build.make:85: CMakeFiles/cmTC_16724.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_16724/fast] Error 2
+
+
+Performing Curl Test HAVE_O_NONBLOCK failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_70cfe/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_70cfe.dir/build.make CMakeFiles/cmTC_70cfe.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_70cfe.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_O_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_70cfe.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:532: warning: ISO C forbids an empty translation unit [-Wpedantic]
+  532 | #endif
+      | 
+Linking C executable cmTC_70cfe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70cfe.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_O_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H CMakeFiles/cmTC_70cfe.dir/CurlTests.c.o -o cmTC_70cfe  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_70cfe.dir/build.make:108: cmTC_70cfe] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_70cfe/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3 failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_94287/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_94287.dir/build.make CMakeFiles/cmTC_94287.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_94287.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GETHOSTBYNAME_R_3  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_94287.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:92:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   92 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:99:23: error: storage size of ‘hdata’ isn’t known
+   99 |   struct hostent_data hdata;
+      |                       ^~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:111:8: error: too few arguments to function ‘gethostbyname_r’
+  111 |   rc = gethostbyname_r(address, &h, &hdata);
+      |        ^~~~~~~~~~~~~~~
+In file included from /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:89:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:99:23: warning: unused variable ‘hdata’ [-Wunused-variable]
+   99 |   struct hostent_data hdata;
+      |                       ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_94287.dir/build.make:85: CMakeFiles/cmTC_94287.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_94287/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5 failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_db3f6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_db3f6.dir/build.make CMakeFiles/cmTC_db3f6.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_db3f6.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GETHOSTBYNAME_R_5  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_db3f6.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:92:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   92 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:114:51: warning: passing argument 5 of ‘gethostbyname_r’ from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |                                                   ^~~~~~~~~
+      |                                                   |
+      |                                                   int *
+In file included from /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:89:
+/usr/include/netdb.h:180:36: note: expected ‘struct hostent ** restrict’ but argument is of type ‘int *’
+  180 |        struct hostent **__restrict __result,
+      |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:114:8: error: too few arguments to function ‘gethostbyname_r’
+  114 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |        ^~~~~~~~~~~~~~~
+In file included from /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:89:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_db3f6.dir/build.make:85: CMakeFiles/cmTC_db3f6.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_db3f6/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3_REENTRANT failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6773a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6773a.dir/build.make CMakeFiles/cmTC_6773a.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6773a.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GETHOSTBYNAME_R_3_REENTRANT  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_6773a.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:92:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   92 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:99:23: error: storage size of ‘hdata’ isn’t known
+   99 |   struct hostent_data hdata;
+      |                       ^~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:111:8: error: too few arguments to function ‘gethostbyname_r’
+  111 |   rc = gethostbyname_r(address, &h, &hdata);
+      |        ^~~~~~~~~~~~~~~
+In file included from /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:89:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:99:23: warning: unused variable ‘hdata’ [-Wunused-variable]
+   99 |   struct hostent_data hdata;
+      |                       ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_6773a.dir/build.make:85: CMakeFiles/cmTC_6773a.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_6773a/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5_REENTRANT failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_352d5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_352d5.dir/build.make CMakeFiles/cmTC_352d5.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_352d5.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GETHOSTBYNAME_R_5_REENTRANT  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_352d5.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:92:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   92 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:114:51: warning: passing argument 5 of ‘gethostbyname_r’ from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |                                                   ^~~~~~~~~
+      |                                                   |
+      |                                                   int *
+In file included from /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:89:
+/usr/include/netdb.h:180:36: note: expected ‘struct hostent ** restrict’ but argument is of type ‘int *’
+  180 |        struct hostent **__restrict __result,
+      |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:114:8: error: too few arguments to function ‘gethostbyname_r’
+  114 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |        ^~~~~~~~~~~~~~~
+In file included from /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:89:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_352d5.dir/build.make:85: CMakeFiles/cmTC_352d5.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_352d5/fast] Error 2
+
+
+Performing Curl Test HAVE_GLIBC_STRERROR_R failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8147b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8147b.dir/build.make CMakeFiles/cmTC_8147b.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8147b.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GLIBC_STRERROR_R  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_8147b.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:394:6: warning: no previous prototype for ‘check’ [-Wmissing-prototypes]
+  394 | void check(char c) {}
+      |      ^~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘check’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:394:17: warning: unused parameter ‘c’ [-Wunused-parameter]
+  394 | void check(char c) {}
+      |            ~~~~~^
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: At top level:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:397:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  397 | main () {
+      | ^~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:400:51: error: subscripted value is neither array nor pointer nor vector
+  400 |   check(strerror_r(EACCES, buffer, sizeof(buffer))[0]);
+      |                                                   ^
+gmake[1]: *** [CMakeFiles/cmTC_8147b.dir/build.make:85: CMakeFiles/cmTC_8147b.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_8147b/fast] Error 2
+
+
+Performing Curl Test HAVE_BUILTIN_AVAILABLE failed with the following output:
+Change Dir: /workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_54a91/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_54a91.dir/build.make CMakeFiles/cmTC_54a91.dir/build
+gmake[1]: Entering directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_54a91.dir/CurlTests.c.o
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_BUILTIN_AVAILABLE  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_54a91.dir/CurlTests.c.o -c /workspaces/under-the-c-desktop/curl/CMake/CurlTests.c
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:446:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  446 | main() {
+      | ^~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c: In function ‘main’:
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:447:6: warning: implicit declaration of function ‘__builtin_available’; did you mean ‘__builtin_scalbl’? [-Wimplicit-function-declaration]
+  447 |   if(__builtin_available(macOS 10.12, *)) {}
+      |      ^~~~~~~~~~~~~~~~~~~
+      |      __builtin_scalbl
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:447:6: warning: nested extern declaration of ‘__builtin_available’ [-Wnested-externs]
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:447:26: error: ‘macOS’ undeclared (first use in this function)
+  447 |   if(__builtin_available(macOS 10.12, *)) {}
+      |                          ^~~~~
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:447:26: note: each undeclared identifier is reported only once for each function it appears in
+/workspaces/under-the-c-desktop/curl/CMake/CurlTests.c:447:31: error: expected ‘)’ before numeric constant
+  447 |   if(__builtin_available(macOS 10.12, *)) {}
+      |                               ^~~~~~
+      |                               )
+gmake[1]: *** [CMakeFiles/cmTC_54a91.dir/build.make:85: CMakeFiles/cmTC_54a91.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/workspaces/under-the-c-desktop/curl/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:140: cmTC_54a91/fast] Error 2
+
+
