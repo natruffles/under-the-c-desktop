@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "../include/Menu.h"
-#include "../include/json.hpp"
+#include "Menu.h"
+#include "json.hpp"
 #include <curl/curl.h>  // include cURL library
 
 using namespace std;
@@ -44,7 +44,7 @@ int main()
 {
     Menu menu;
     fetchURLTest();
-    //menu.menuNavigator();
+    menu.menuNavigator();
  
     return 0;
 }

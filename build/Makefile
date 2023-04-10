@@ -67,13 +67,59 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/under-the-c-desktop/build
+CMAKE_SOURCE_DIR = /workspaces/under-the-c-desktop
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspaces/under-the-c-desktop/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -130,71 +176,95 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named weatherlite
+# Target rules for targets named Weatherlite_lib
 
 # Build rule for target.
-weatherlite: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 weatherlite
-.PHONY : weatherlite
+Weatherlite_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Weatherlite_lib
+.PHONY : Weatherlite_lib
 
 # fast build rule for target.
-weatherlite/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/build
-.PHONY : weatherlite/fast
+Weatherlite_lib/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/Weatherlite_lib.dir/build.make src/CMakeFiles/Weatherlite_lib.dir/build
+.PHONY : Weatherlite_lib/fast
 
-workspaces/under-the-c-desktop/src/Menu.o: workspaces/under-the-c-desktop/src/Menu.cpp.o
+#=============================================================================
+# Target rules for targets named Weatherlite_run
 
-.PHONY : workspaces/under-the-c-desktop/src/Menu.o
+# Build rule for target.
+Weatherlite_run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Weatherlite_run
+.PHONY : Weatherlite_run
 
-# target to build an object file
-workspaces/under-the-c-desktop/src/Menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/Menu.cpp.o
-.PHONY : workspaces/under-the-c-desktop/src/Menu.cpp.o
+# fast build rule for target.
+Weatherlite_run/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/Weatherlite_run.dir/build.make src/CMakeFiles/Weatherlite_run.dir/build
+.PHONY : Weatherlite_run/fast
 
-workspaces/under-the-c-desktop/src/Menu.i: workspaces/under-the-c-desktop/src/Menu.cpp.i
+#=============================================================================
+# Target rules for targets named Weatherlite_tst
 
-.PHONY : workspaces/under-the-c-desktop/src/Menu.i
+# Build rule for target.
+Weatherlite_tst: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Weatherlite_tst
+.PHONY : Weatherlite_tst
 
-# target to preprocess a source file
-workspaces/under-the-c-desktop/src/Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/Menu.cpp.i
-.PHONY : workspaces/under-the-c-desktop/src/Menu.cpp.i
+# fast build rule for target.
+Weatherlite_tst/fast:
+	$(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Weatherlite_tst.dir/build.make tst/CMakeFiles/Weatherlite_tst.dir/build
+.PHONY : Weatherlite_tst/fast
 
-workspaces/under-the-c-desktop/src/Menu.s: workspaces/under-the-c-desktop/src/Menu.cpp.s
+#=============================================================================
+# Target rules for targets named gmock_main
 
-.PHONY : workspaces/under-the-c-desktop/src/Menu.s
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
-# target to generate assembly for a file
-workspaces/under-the-c-desktop/src/Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/Menu.cpp.s
-.PHONY : workspaces/under-the-c-desktop/src/Menu.cpp.s
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
 
-workspaces/under-the-c-desktop/src/main.o: workspaces/under-the-c-desktop/src/main.cpp.o
+#=============================================================================
+# Target rules for targets named gmock
 
-.PHONY : workspaces/under-the-c-desktop/src/main.o
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
 
-# target to build an object file
-workspaces/under-the-c-desktop/src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/main.cpp.o
-.PHONY : workspaces/under-the-c-desktop/src/main.cpp.o
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
 
-workspaces/under-the-c-desktop/src/main.i: workspaces/under-the-c-desktop/src/main.cpp.i
+#=============================================================================
+# Target rules for targets named gtest_main
 
-.PHONY : workspaces/under-the-c-desktop/src/main.i
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
 
-# target to preprocess a source file
-workspaces/under-the-c-desktop/src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/main.cpp.i
-.PHONY : workspaces/under-the-c-desktop/src/main.cpp.i
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
-workspaces/under-the-c-desktop/src/main.s: workspaces/under-the-c-desktop/src/main.cpp.s
+#=============================================================================
+# Target rules for targets named gtest
 
-.PHONY : workspaces/under-the-c-desktop/src/main.s
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
 
-# target to generate assembly for a file
-workspaces/under-the-c-desktop/src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/main.cpp.s
-.PHONY : workspaces/under-the-c-desktop/src/main.cpp.s
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f lib/googletest/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
 # Help Target
 help:
@@ -203,14 +273,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... weatherlite"
-	@echo "... workspaces/under-the-c-desktop/src/Menu.o"
-	@echo "... workspaces/under-the-c-desktop/src/Menu.i"
-	@echo "... workspaces/under-the-c-desktop/src/Menu.s"
-	@echo "... workspaces/under-the-c-desktop/src/main.o"
-	@echo "... workspaces/under-the-c-desktop/src/main.i"
-	@echo "... workspaces/under-the-c-desktop/src/main.s"
+	@echo "... Weatherlite_lib"
+	@echo "... Weatherlite_run"
+	@echo "... Weatherlite_tst"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
 .PHONY : help
 
 

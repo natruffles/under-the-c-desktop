@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/under-the-c-desktop/build
+# Install script for directory: /workspaces/under-the-c-desktop
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,6 +40,14 @@ endif()
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/workspaces/under-the-c-desktop/build/src/cmake_install.cmake")
+  include("/workspaces/under-the-c-desktop/build/tst/cmake_install.cmake")
+  include("/workspaces/under-the-c-desktop/build/lib/googletest/cmake_install.cmake")
+
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
