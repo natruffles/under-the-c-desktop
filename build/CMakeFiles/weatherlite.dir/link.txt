@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/main.cpp.o CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/Menu.cpp.o -o weatherlite  -Wl,-rpath,/usr/local/lib /usr/local/lib/libcurl.so.4.8.0 

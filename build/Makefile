@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/under-the-c-desktop
+CMAKE_SOURCE_DIR = /workspaces/under-the-c-desktop/build
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/under-the-c-desktop
+CMAKE_BINARY_DIR = /workspaces/under-the-c-desktop/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/under-the-c-desktop/CMakeFiles /workspaces/under-the-c-desktop//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/under-the-c-desktop/build/CMakeFiles /workspaces/under-the-c-desktop/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/under-the-c-desktop/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/under-the-c-desktop/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,59 +142,59 @@ weatherlite/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/build
 .PHONY : weatherlite/fast
 
-src/Menu.o: src/Menu.cpp.o
+workspaces/under-the-c-desktop/src/Menu.o: workspaces/under-the-c-desktop/src/Menu.cpp.o
 
-.PHONY : src/Menu.o
-
-# target to build an object file
-src/Menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/src/Menu.cpp.o
-.PHONY : src/Menu.cpp.o
-
-src/Menu.i: src/Menu.cpp.i
-
-.PHONY : src/Menu.i
-
-# target to preprocess a source file
-src/Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/src/Menu.cpp.i
-.PHONY : src/Menu.cpp.i
-
-src/Menu.s: src/Menu.cpp.s
-
-.PHONY : src/Menu.s
-
-# target to generate assembly for a file
-src/Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/src/Menu.cpp.s
-.PHONY : src/Menu.cpp.s
-
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
+.PHONY : workspaces/under-the-c-desktop/src/Menu.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+workspaces/under-the-c-desktop/src/Menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/Menu.cpp.o
+.PHONY : workspaces/under-the-c-desktop/src/Menu.cpp.o
 
-src/main.i: src/main.cpp.i
+workspaces/under-the-c-desktop/src/Menu.i: workspaces/under-the-c-desktop/src/Menu.cpp.i
 
-.PHONY : src/main.i
+.PHONY : workspaces/under-the-c-desktop/src/Menu.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+workspaces/under-the-c-desktop/src/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/Menu.cpp.i
+.PHONY : workspaces/under-the-c-desktop/src/Menu.cpp.i
 
-src/main.s: src/main.cpp.s
+workspaces/under-the-c-desktop/src/Menu.s: workspaces/under-the-c-desktop/src/Menu.cpp.s
 
-.PHONY : src/main.s
+.PHONY : workspaces/under-the-c-desktop/src/Menu.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+workspaces/under-the-c-desktop/src/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/Menu.cpp.s
+.PHONY : workspaces/under-the-c-desktop/src/Menu.cpp.s
+
+workspaces/under-the-c-desktop/src/main.o: workspaces/under-the-c-desktop/src/main.cpp.o
+
+.PHONY : workspaces/under-the-c-desktop/src/main.o
+
+# target to build an object file
+workspaces/under-the-c-desktop/src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/main.cpp.o
+.PHONY : workspaces/under-the-c-desktop/src/main.cpp.o
+
+workspaces/under-the-c-desktop/src/main.i: workspaces/under-the-c-desktop/src/main.cpp.i
+
+.PHONY : workspaces/under-the-c-desktop/src/main.i
+
+# target to preprocess a source file
+workspaces/under-the-c-desktop/src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/main.cpp.i
+.PHONY : workspaces/under-the-c-desktop/src/main.cpp.i
+
+workspaces/under-the-c-desktop/src/main.s: workspaces/under-the-c-desktop/src/main.cpp.s
+
+.PHONY : workspaces/under-the-c-desktop/src/main.s
+
+# target to generate assembly for a file
+workspaces/under-the-c-desktop/src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/weatherlite.dir/build.make CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/main.cpp.s
+.PHONY : workspaces/under-the-c-desktop/src/main.cpp.s
 
 # Help Target
 help:
@@ -205,12 +205,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... weatherlite"
-	@echo "... src/Menu.o"
-	@echo "... src/Menu.i"
-	@echo "... src/Menu.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... workspaces/under-the-c-desktop/src/Menu.o"
+	@echo "... workspaces/under-the-c-desktop/src/Menu.i"
+	@echo "... workspaces/under-the-c-desktop/src/Menu.s"
+	@echo "... workspaces/under-the-c-desktop/src/main.o"
+	@echo "... workspaces/under-the-c-desktop/src/main.i"
+	@echo "... workspaces/under-the-c-desktop/src/main.s"
 .PHONY : help
 
 

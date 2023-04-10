@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/weatherlite.dir/src/Menu.cpp.o"
-  "CMakeFiles/weatherlite.dir/src/main.cpp.o"
+  "CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/Menu.cpp.o"
+  "CMakeFiles/weatherlite.dir/workspaces/under-the-c-desktop/src/main.cpp.o"
   "weatherlite"
   "weatherlite.pdb"
 )

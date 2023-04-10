@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/under-the-c-desktop/include
+CXX_INCLUDES = -I/workspaces/under-the-c-desktop/build/include
 
 CXX_FLAGS = -std=gnu++17
 
