@@ -7,7 +7,18 @@
 
 using namespace std;
 using json = nlohmann::json;
+TEST(MenuTest, GetLocationTest) {
+  // Test getting location from user input
+  {
+    Menu menu;
+    std::istringstream input("12345\n");
+    std::cin.rdbuf(input.rdbuf());
 
+    menu.getLocation();
+
+    ASSERT_EQ(menu.getLocationZIP(), "12345");
+  }
+}
 TEST(MenuTest, JsonCreatorTest) {
   // Test writing to file
   {
