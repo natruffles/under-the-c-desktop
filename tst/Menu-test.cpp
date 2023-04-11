@@ -7,6 +7,39 @@
 
 using namespace std;
 using json = nlohmann::json;
+TEST(MenuTest, GetWifiTest) {
+  // Test valid input
+  {
+    std::stringstream input("my_wifi\nmy_password\n");
+    std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
+    Menu menu;
+    menu.getWifi();
+    ASSERT_EQ(menu.getWifiSSID(), "my_wifi");
+    ASSERT_EQ(menu.getWifiPassword(), "my_password");
+  }
+
+  // Test empty input
+  {
+    std::stringstream input("\n\n");
+    std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
+    Menu menu;
+    menu.getWifi();
+    ASSERT_EQ(menu.getWifiSSID(), "");
+    ASSERT_EQ(menu.getWifiPassword(), "");
+  }
+
+  // Test invalid input (SSID longer than 32 characters)
+  {
+    std::stringstream input("this_is_a_very_long_wifi_ssid_that_is_over_32_characters_long\nmy_password\n");
+    std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
+    Menu menu;
+    menu.getWifi();
+    ASSERT_EQ(menu.getWifiSSID(), "");
+    ASSERT_EQ(menu.getWifiPassword(), "");
+    // Check if error message was printed
+    // ...
+  }
+}
 TEST(MenuTest, RedoCheckerTest) { //redoChecker Test cases
   // Test when user inputs 'Y'
   {
