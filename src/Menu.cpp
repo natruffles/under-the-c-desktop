@@ -37,7 +37,7 @@ void Menu::MenuNavigator() {
   }
 }
 
-//The GetWifi function retrieves the SSID and the password from the user after prompting them and stores them in the corresponding variables.
+//Retrieves the SSID and the password from the user after prompting them and stores them in the corresponding variables.
 void Menu::GetWifi() {
   cout << "Enter Wifi SSID:" << endl;
   cin >> wifi_ssid;
@@ -45,13 +45,13 @@ void Menu::GetWifi() {
   cin >> wifi_password;
 }
 
-//The GetLocation function retrieves the ZIP code of the device from the user after prompting them and stores it in the corresponding variable.
+//Retrieves the ZIP code of the device from the user after prompting them and stores it in the corresponding variable.
 void Menu::GetLocation() {
   cout << "Enter ZIP code:" << endl;
   cin >> locationZIP;
 }
 
-//The RedoChecker function determines if the user wants to go through the menu again, or exit the program.  It will exit the program if the user gives an invalid input.
+//Determines if the user wants to go through the menu again, or exit the program.  Exits the program if the user gives an invalid input.
 int Menu::RedoChecker(){
     string temp_choice;
     cout << "Would you like to enter the menu again? (Y/N)" << endl;
