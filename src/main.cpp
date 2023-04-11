@@ -10,7 +10,7 @@ using json = nlohmann::json;
 int main()
 {
     Menu menu;
-    menu.menuNavigator();
+    menu.MenuNavigator();
 
     return 0;
 }
