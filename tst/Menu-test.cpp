@@ -7,6 +7,31 @@
 
 using namespace std;
 using json = nlohmann::json;
+TEST(MenuTest, MenuNavigatorTest) {
+  // Test selecting menu options 1 and 2, and exiting with 'N'
+  {
+    Menu menu;
+    std::istringstream input("1\nSSID\nPassword\nN\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    menu.menuNavigator();
+
+    ASSERT_EQ(menu.getWifiSSID(), "SSID");
+    ASSERT_EQ(menu.getWifiPassword(), "Password");
+    ASSERT_EQ(menu.getLocationZIP(), "");
+  }
+
+  // Test selecting an invalid menu option and then selecting option 2
+  {
+    Menu menu;
+    std::istringstream input("4\n2\n12345\nN\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    menu.menuNavigator();
+
+    ASSERT_EQ(menu.getLocationZIP(), "12345");
+  }
+}
 TEST(MenuTest, GetLocationTest) {
   // Test getting location from user input
   {
