@@ -7,18 +7,18 @@
 
 using namespace std;
 using json = nlohmann::json;
+
+
 TEST(MenuTest, MenuNavigatorTest) {
   // Test selecting menu options 1 and 2, and exiting with 'N'
   {
     Menu menu;
     std::istringstream input("1\nSSID\nPassword\nN\n");
     std::cin.rdbuf(input.rdbuf());
-
-    menu.menuNavigator();
-
-    ASSERT_EQ(menu.getWifiSSID(), "SSID");
-    ASSERT_EQ(menu.getWifiPassword(), "Password");
-    ASSERT_EQ(menu.getLocationZIP(), "");
+    menu.MenuNavigator();
+    ASSERT_EQ(menu.GetWifiSSID(), "SSID");
+    ASSERT_EQ(menu.GetWifiPassword(), "Password");
+    ASSERT_EQ(menu.GetLocationZIP(), "");
   }
 
   // Test selecting an invalid menu option and then selecting option 2
@@ -26,38 +26,31 @@ TEST(MenuTest, MenuNavigatorTest) {
     Menu menu;
     std::istringstream input("4\n2\n12345\nN\n");
     std::cin.rdbuf(input.rdbuf());
-
-    menu.menuNavigator();
-
-    ASSERT_EQ(menu.getLocationZIP(), "12345");
+    menu.MenuNavigator();
+    ASSERT_EQ(menu.GetLocationZIP(), "12345");
   }
 }
+
 TEST(MenuTest, GetLocationTest) {
   // Test getting location from user input
   {
     Menu menu;
     std::istringstream input("12345\n");
     std::cin.rdbuf(input.rdbuf());
-
-    menu.getLocation();
-
-    ASSERT_EQ(menu.getLocationZIP(), "12345");
+    menu.GetLocation();
+    ASSERT_EQ(menu.GetLocationZIP(), "12345");
   }
 }
+
 TEST(MenuTest, JsonCreatorTest) {
-  // Test writing to file
+  // Test writing to file, verifying that file exists and contains expected data
   {
     Menu menu;
-    menu.setWifi("my_wifi", "my_password");
-    menu.setLocationZIP("12345");
-
-    menu.jsonCreator();
-
-    // Verify that file exists
-    std::ifstream file("weatherliteData.json");
+    menu.SetWifi("my_wifi", "my_password");
+    menu.SetLocationZIP("12345");
+    menu.JsonCreator();
+    std::ifstream file("config.json");
     ASSERT_TRUE(file.good());
-
-    // Verify that file contains expected data
     std::stringstream buffer;
     buffer << file.rdbuf();
     std::string fileContents = buffer.str();
@@ -69,24 +62,22 @@ TEST(MenuTest, JsonCreatorTest) {
   // Test invalid file name
   {
     Menu menu;
-    menu.setWifi("my_wifi", "my_password");
-    menu.setLocationZIP("12345");
-
-    // File name with invalid characters
-    std::string invalidFileName = "weatherliteData?.json";
-
-    ASSERT_DEATH(menu.jsonCreator(invalidFileName), "");
+    menu.SetWifi("my_wifi", "my_password");
+    menu.SetLocationZIP("12345");
+    std::string invalidFileName = "config?.json";
+    ASSERT_DEATH(menu.JsonCreator(invalidFileName), "");
   }
 }
+
 TEST(MenuTest, GetWifiTest) {
   // Test valid input
   {
     std::stringstream input("my_wifi\nmy_password\n");
     std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
     Menu menu;
-    menu.getWifi();
-    ASSERT_EQ(menu.getWifiSSID(), "my_wifi");
-    ASSERT_EQ(menu.getWifiPassword(), "my_password");
+    menu.GetWifi();
+    ASSERT_EQ(menu.GetWifiSSID(), "my_wifi");
+    ASSERT_EQ(menu.GetWifiPassword(), "my_password");
   }
 
   // Test empty input
@@ -94,9 +85,9 @@ TEST(MenuTest, GetWifiTest) {
     std::stringstream input("\n\n");
     std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
     Menu menu;
-    menu.getWifi();
-    ASSERT_EQ(menu.getWifiSSID(), "");
-    ASSERT_EQ(menu.getWifiPassword(), "");
+    menu.GetWifi();
+    ASSERT_EQ(menu.GetWifiSSID(), "");
+    ASSERT_EQ(menu.GetWifiPassword(), "");
   }
 
   // Test invalid input (SSID longer than 32 characters)
@@ -104,20 +95,21 @@ TEST(MenuTest, GetWifiTest) {
     std::stringstream input("this_is_a_very_long_wifi_ssid_that_is_over_32_characters_long\nmy_password\n");
     std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
     Menu menu;
-    menu.getWifi();
-    ASSERT_EQ(menu.getWifiSSID(), "");
-    ASSERT_EQ(menu.getWifiPassword(), "");
+    menu.GetWifi();
+    ASSERT_EQ(menu.GetWifiSSID(), "");
+    ASSERT_EQ(menu.GetWifiPassword(), "");
     // Check if error message was printed
     // ...
   }
 }
-TEST(MenuTest, RedoCheckerTest) { //redoChecker Test cases
+
+TEST(MenuTest, RedoCheckerTest) {
   // Test when user inputs 'Y'
   {
     stringstream input("Y\n");
     cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
     Menu menu;
-    ASSERT_EQ(menu.redoChecker(), 1);
+    ASSERT_EQ(menu.RedoChecker(), 1);
   }
 
   // Test when user inputs 'N'
@@ -125,7 +117,7 @@ TEST(MenuTest, RedoCheckerTest) { //redoChecker Test cases
     stringstream input("N\n");
     cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
     Menu menu;
-    ASSERT_EQ(menu.redoChecker(), 0);
+    ASSERT_EQ(menu.RedoChecker(), 0);
     // Check if jsonCreator() was called
     // ...
   }
@@ -135,16 +127,16 @@ TEST(MenuTest, RedoCheckerTest) { //redoChecker Test cases
     std::stringstream input("invalid_choice\n");
     std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
     Menu menu;
-    ASSERT_EQ(menu.redoChecker(), 0);
+    ASSERT_EQ(menu.RedoChecker(), 0);
     // Check if error message was printed
     // ...
   }
 }
+
 TEST(MenuTest, WifiTest) {
   Menu menu;
   menu.wifiSSID = "myWifi";
   menu.wifiPassword = "password123";
-
   EXPECT_EQ(menu.wifiSSID, "myWifi");
   EXPECT_EQ(menu.wifiPassword, "password123");
 }
@@ -152,7 +144,6 @@ TEST(MenuTest, WifiTest) {
 TEST(MenuTest, LocationTest) {
   Menu menu;
   menu.locationZIP = "12345";
-
   EXPECT_EQ(menu.locationZIP, "12345");
 }
 
@@ -161,12 +152,10 @@ TEST(MenuTest, JsonTest) {
   menu.wifiSSID = "myWifi";
   menu.wifiPassword = "password123";
   menu.locationZIP = "12345";
-  menu.jsonCreator();
-
-  ifstream file("weatherliteData.json");
+  menu.JsonCreator();
+  ifstream file("config.json");
   json data; 
   file >> data;
-  
   EXPECT_EQ(data["wifiSSID"], "myWifi");
   EXPECT_EQ(data["wifiPassword"], "password123");
   EXPECT_EQ(data["locationZIP"], "12345");
