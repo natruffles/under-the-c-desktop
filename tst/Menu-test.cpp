@@ -7,6 +7,41 @@
 
 using namespace std;
 using json = nlohmann::json;
+
+TEST(MenuTest, JsonCreatorTest) {
+  // Test writing to file
+  {
+    Menu menu;
+    menu.setWifi("my_wifi", "my_password");
+    menu.setLocationZIP("12345");
+
+    menu.jsonCreator();
+
+    // Verify that file exists
+    std::ifstream file("weatherliteData.json");
+    ASSERT_TRUE(file.good());
+
+    // Verify that file contains expected data
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    std::string fileContents = buffer.str();
+    ASSERT_TRUE(fileContents.find("my_wifi") != std::string::npos);
+    ASSERT_TRUE(fileContents.find("my_password") != std::string::npos);
+    ASSERT_TRUE(fileContents.find("12345") != std::string::npos);
+  }
+
+  // Test invalid file name
+  {
+    Menu menu;
+    menu.setWifi("my_wifi", "my_password");
+    menu.setLocationZIP("12345");
+
+    // File name with invalid characters
+    std::string invalidFileName = "weatherliteData?.json";
+
+    ASSERT_DEATH(menu.jsonCreator(invalidFileName), "");
+  }
+}
 TEST(MenuTest, GetWifiTest) {
   // Test valid input
   {
