@@ -248,8 +248,8 @@ src/CMakeFiles/Weatherlite_run.dir/clean:
 # Target rules for target tst/CMakeFiles/Weatherlite_tst.dir
 
 # All Build rule for target.
-tst/CMakeFiles/Weatherlite_tst.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
 tst/CMakeFiles/Weatherlite_tst.dir/all: src/CMakeFiles/Weatherlite_lib.dir/all
+tst/CMakeFiles/Weatherlite_tst.dir/all: lib/googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Weatherlite_tst.dir/build.make tst/CMakeFiles/Weatherlite_tst.dir/depend
 	$(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Weatherlite_tst.dir/build.make tst/CMakeFiles/Weatherlite_tst.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/under-the-c-desktop/build/CMakeFiles --progress-num=7,8,9 "Built target Weatherlite_tst"
