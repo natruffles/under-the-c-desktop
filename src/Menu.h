@@ -9,6 +9,7 @@ class Menu{
         void menuNavigator();
         void getWifi();
         void getLocation();
+        void getControllerOperatingMode();
 
         int redoChecker();
 
@@ -19,5 +20,6 @@ class Menu{
         string wifiSSID = "unknown";
         string wifiPassword = "unknown";
         string locationZIP = "unknown";
+        string controllerMode = "unknown";
 };
 
