@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/workspaces/under-the-c-desktop/src/Menu.cpp
+iostream
+-
+fstream
+-
+string
+-
+Menu.h
+/workspaces/under-the-c-desktop/src/Menu.h
+json.hpp
+/workspaces/under-the-c-desktop/src/json.hpp
+
 /workspaces/under-the-c-desktop/src/Menu.h
 iostream
 -
@@ -395,3 +407,14 @@ any
 -
 string_view
 -
+
+/workspaces/under-the-c-desktop/src/main.cpp
+iostream
+-
+Menu.h
+/workspaces/under-the-c-desktop/src/Menu.h
+json.hpp
+/workspaces/under-the-c-desktop/src/json.hpp
+curl/curl.h
+-
+

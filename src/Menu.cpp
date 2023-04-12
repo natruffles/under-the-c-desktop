@@ -20,15 +20,15 @@ void Menu::MenuNavigator() {
     cin >> menuChoice;
     switch (menuChoice) {
       case 1:
-        GetWifi();
+        SetWifi();
         redo = RedoChecker();
         break;
       case 2:
-        GetLocation();
+        SetLocation();
         redo = RedoChecker();
         break;
       case 3:
-        GetControllerOnlineOpMode();
+        SetControllerOnlineOpMode();
         redo = RedoChecker();
         break;
       default:
@@ -40,7 +40,7 @@ void Menu::MenuNavigator() {
 }
 
 // gets wifiSSID and wifiPassword as strings from the user after prompts
-void Menu::GetWifi() {
+void Menu::SetWifi() {
   cout << "Enter Wifi SSID:" << endl;
   cin >> wifiSSID;
   cout << "Enter Wifi Password:" << endl;
@@ -48,14 +48,14 @@ void Menu::GetWifi() {
 }
 
 // gets locationZIP from the user as a string after a prompt
-void Menu::GetLocation(){
+void Menu::SetLocation(){
   cout << "Enter ZIP code:" << endl;
   cin >> locationZIP;
 }
 
 // generates an additional submenu where user enters a string number for which controller 
 // internet-connected operating mode they wish to be in
-void Menu::GetControllerOnlineOpMode() {
+void Menu::SetControllerOnlineOpMode() {
   int redo = 1;
   int subMenuChoice;
   while (redo == 1) {

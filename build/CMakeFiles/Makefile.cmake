@@ -7,10 +7,6 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/usr/local/lib/cmake/CURL/CURLConfig.cmake"
-  "/usr/local/lib/cmake/CURL/CURLConfigVersion.cmake"
-  "/usr/local/lib/cmake/CURL/CURLTargets-noconfig.cmake"
-  "/usr/local/lib/cmake/CURL/CURLTargets.cmake"
   "/usr/share/cmake-3.18/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
   "/usr/share/cmake-3.18/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.18/Modules/CMakeCXXInformation.cmake"
@@ -37,7 +33,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.18/Modules/FindPython.cmake"
   "/usr/share/cmake-3.18/Modules/FindPython/Support.cmake"
   "/usr/share/cmake-3.18/Modules/FindThreads.cmake"
-  "/usr/share/cmake-3.18/Modules/FindZLIB.cmake"
   "/usr/share/cmake-3.18/Modules/GNUInstallDirs.cmake"
   "/usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake"
   "/usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake"
