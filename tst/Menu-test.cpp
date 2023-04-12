@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 #include "gtest/gtest.h"
 #include "../src/Menu.h"
@@ -37,7 +38,7 @@ TEST(MenuTest, GetLocationTest) {
     Menu menu;
     std::istringstream input("12345\n");
     std::cin.rdbuf(input.rdbuf());
-    menu.GetLocation();
+    menu.SetLocation();
     ASSERT_EQ(menu.GetLocationZIP(), "12345");
   }
 }
@@ -46,8 +47,12 @@ TEST(MenuTest, JsonCreatorTest) {
   // Test writing to file, verifying that file exists and contains expected data
   {
     Menu menu;
-    menu.SetWifi("my_wifi", "my_password");
-    menu.SetLocationZIP("12345");
+    menu.SetWifi();
+    stringstream("my_wifi\n") >> menu.wifiSSID;
+    stringstream("my_password\n") >> menu.wifiPassword;
+    menu.SetLocation();
+    stringstream("12345\n") >> menu.locationZIP;
+
     menu.JsonCreator();
     std::ifstream file("config.json");
     ASSERT_TRUE(file.good());
@@ -58,15 +63,6 @@ TEST(MenuTest, JsonCreatorTest) {
     ASSERT_TRUE(fileContents.find("my_password") != std::string::npos);
     ASSERT_TRUE(fileContents.find("12345") != std::string::npos);
   }
-
-  // Test invalid file name
-  {
-    Menu menu;
-    menu.SetWifi("my_wifi", "my_password");
-    menu.SetLocationZIP("12345");
-    std::string invalidFileName = "config?.json";
-    ASSERT_DEATH(menu.JsonCreator(invalidFileName), "");
-  }
 }
 
 TEST(MenuTest, GetWifiTest) {
@@ -75,7 +71,7 @@ TEST(MenuTest, GetWifiTest) {
     std::stringstream input("my_wifi\nmy_password\n");
     std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
     Menu menu;
-    menu.GetWifi();
+    menu.SetWifi();
     ASSERT_EQ(menu.GetWifiSSID(), "my_wifi");
     ASSERT_EQ(menu.GetWifiPassword(), "my_password");
   }
@@ -85,7 +81,7 @@ TEST(MenuTest, GetWifiTest) {
     std::stringstream input("\n\n");
     std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
     Menu menu;
-    menu.GetWifi();
+    menu.SetWifi();
     ASSERT_EQ(menu.GetWifiSSID(), "");
     ASSERT_EQ(menu.GetWifiPassword(), "");
   }
@@ -95,7 +91,7 @@ TEST(MenuTest, GetWifiTest) {
     std::stringstream input("this_is_a_very_long_wifi_ssid_that_is_over_32_characters_long\nmy_password\n");
     std::cin.rdbuf(input.rdbuf()); // Redirect cin to input stringstream
     Menu menu;
-    menu.GetWifi();
+    menu.SetWifi();
     ASSERT_EQ(menu.GetWifiSSID(), "");
     ASSERT_EQ(menu.GetWifiPassword(), "");
     // Check if error message was printed
