@@ -1,6 +1,18 @@
 # WeatherESPLite
 
-## Updated Domain Model (as of iteration3 - 3/27/23)
+## Tutorial
+This [desktop](https://github.com/EECE3093C/under-the-c-desktop) repo is a configuration menu app for you to customize the operation of your [WeatherESPLite controller](https://github.com/EECE3093C/under-the-c-controller). After downloading the latest release, run the executable in a Unix operating system environment.
+If you wish download/run the source code yourself, please follow these steps:
+1. Clone this repo to your machine.
+2. Open up the pre-configured dev container in VSCode.
+3. Open a terminal, and type the following commands (the ./src... command runs the main application, the ./tst... command runs the unit tests):
+    * ```cd build```
+    * ```cmake ..```
+    * ```make all```
+    * ```./src/Weatherlite_run```
+    * ```./tst/Weatherlite_tst```
+
+## Updated Domain Model (as of iteration4 - 4/12/23)
 ### Vision
 
 #### What is your product (high level view)?
@@ -8,7 +20,6 @@
 * Connects to the internet to retrieve current weather data which can be used to update lights/displays attached to the controller
 * Uses a dimmable RGB LED to simulate a porch light, and a small LED display to project relevant weather info
 * Has the ability to work with wifi or without using local temperature/light sensors
-
 ![](https://raw.githubusercontent.com/natruffles/natruffles/main/version3.jpg)
 
 #### Whom is it for?
@@ -58,14 +69,18 @@
 * This project is a way for us to penetrate the IoT/smart home market
 #### What languages/toolkits do you propose to use for development?
 * For programming the desktop application, we are using C++ inside a VSCode Dev Container with the following libraries:
-    * [curl](https://github.com/curl/curl) - For accessing the internet and sending HTTP requests
+    * [libcurl](https://github.com/curl/curl) - For accessing the internet and sending HTTP requests
     * [JSON](https://github.com/nlohmann/json) - For parsing JSON returned from HTTP requests, and generating JSON configuration file
+    * [GoogleTest](https://github.com/google/googletest) - For unit testing of desktop repo code
 * For programming the controller application, we are using Arduino-C (C++ with hardware-specific features) and the PlatformIO IDE inside a VSCode Dev Container with the following libraries:
     * [Arduino](https://github.com/espressif/arduino-esp32) - For accessing hardware-specific programming features
     * [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal) - For interfacing with 16x2 LCD display
     * [WiFi](https://github.com/espressif/arduino-esp32/tree/master/libraries/WiFi) - For connecting to the internet over WiFi using ESP32 hardware
     * [HTTPClient](https://github.com/espressif/arduino-esp32/tree/master/libraries/HTTPClient) - For sending HTTP GET requests to OpenWeatherMap API
-    * [Arduino_JSON](https://github.com/arduino-libraries/Arduino_JSON) - For parsing JSON returned from HTTP requests
+    * [ArduinoJson](https://github.com/bblanchon/ArduinoJson) - For parsing JSON returned from HTTP requests, parsing "config.json" file
+    * [SPIFFS](https://github.com/pellepl/spiffs) - For generating a small filesystem, ability to store contents of "config.json" on controller
+    * [Unity](https://github.com/ThrowTheSwitch/Unity) - For unit/on-board testing of controller repo code
+
 
 ### Challenges and Risks
 
