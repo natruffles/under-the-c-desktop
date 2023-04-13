@@ -10,9 +10,9 @@ using json = nlohmann::json;
 int main()
 {
     Menu menu;
-    httpRequest HttpRequest;
-    HttpRequest.fetchURLTest();
-    menu.menuNavigator();
+    HttpRequest HttpRequest;
+    HttpRequest.FetchURLTest();
+    menu.MenuNavigator();
  
     return 0;
 }

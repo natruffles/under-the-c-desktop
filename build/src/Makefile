@@ -205,6 +205,36 @@ Weatherlite_run/fast:
 	cd /workspaces/under-the-c-desktop/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Weatherlite_run.dir/build.make src/CMakeFiles/Weatherlite_run.dir/build
 .PHONY : Weatherlite_run/fast
 
+HttpRequest.o: HttpRequest.cpp.o
+
+.PHONY : HttpRequest.o
+
+# target to build an object file
+HttpRequest.cpp.o:
+	cd /workspaces/under-the-c-desktop/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Weatherlite_lib.dir/build.make src/CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.o
+	cd /workspaces/under-the-c-desktop/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Weatherlite_run.dir/build.make src/CMakeFiles/Weatherlite_run.dir/HttpRequest.cpp.o
+.PHONY : HttpRequest.cpp.o
+
+HttpRequest.i: HttpRequest.cpp.i
+
+.PHONY : HttpRequest.i
+
+# target to preprocess a source file
+HttpRequest.cpp.i:
+	cd /workspaces/under-the-c-desktop/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Weatherlite_lib.dir/build.make src/CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.i
+	cd /workspaces/under-the-c-desktop/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Weatherlite_run.dir/build.make src/CMakeFiles/Weatherlite_run.dir/HttpRequest.cpp.i
+.PHONY : HttpRequest.cpp.i
+
+HttpRequest.s: HttpRequest.cpp.s
+
+.PHONY : HttpRequest.s
+
+# target to generate assembly for a file
+HttpRequest.cpp.s:
+	cd /workspaces/under-the-c-desktop/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Weatherlite_lib.dir/build.make src/CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.s
+	cd /workspaces/under-the-c-desktop/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/Weatherlite_run.dir/build.make src/CMakeFiles/Weatherlite_run.dir/HttpRequest.cpp.s
+.PHONY : HttpRequest.cpp.s
+
 Menu.o: Menu.cpp.o
 
 .PHONY : Menu.o
@@ -279,6 +309,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Weatherlite_lib"
 	@echo "... Weatherlite_run"
+	@echo "... HttpRequest.o"
+	@echo "... HttpRequest.i"
+	@echo "... HttpRequest.s"
 	@echo "... Menu.o"
 	@echo "... Menu.i"
 	@echo "... Menu.s"

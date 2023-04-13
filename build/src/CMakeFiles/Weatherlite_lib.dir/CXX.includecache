@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/workspaces/under-the-c-desktop/src/HttpRequest.cpp
+curl/curl.h
+-
+fstream
+-
+iostream
+-
+string
+-
+HttpRequest.h
+/workspaces/under-the-c-desktop/src/HttpRequest.h
+
+/workspaces/under-the-c-desktop/src/HttpRequest.h
+iostream
+-
+string
+-
+fstream
+-
+curl/curl.h
+-
+
 /workspaces/under-the-c-desktop/src/Menu.cpp
 iostream
 -
@@ -22,6 +44,16 @@ json.hpp
 iostream
 -
 string
+-
+
+/workspaces/under-the-c-desktop/src/httpRequest.h
+iostream
+-
+string
+-
+fstream
+-
+curl/curl.h
 -
 
 /workspaces/under-the-c-desktop/src/json.hpp
@@ -411,6 +443,8 @@ string_view
 /workspaces/under-the-c-desktop/src/main.cpp
 iostream
 -
+httpRequest.h
+/workspaces/under-the-c-desktop/src/httpRequest.h
 Menu.h
 /workspaces/under-the-c-desktop/src/Menu.h
 json.hpp
