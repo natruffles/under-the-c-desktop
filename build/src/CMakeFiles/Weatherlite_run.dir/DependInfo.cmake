@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/workspaces/under-the-c-desktop/src/HttpRequest.cpp" "/workspaces/under-the-c-desktop/build/src/CMakeFiles/Weatherlite_run.dir/HttpRequest.cpp.o"
   "/workspaces/under-the-c-desktop/src/Menu.cpp" "/workspaces/under-the-c-desktop/build/src/CMakeFiles/Weatherlite_run.dir/Menu.cpp.o"
   "/workspaces/under-the-c-desktop/src/main.cpp" "/workspaces/under-the-c-desktop/build/src/CMakeFiles/Weatherlite_run.dir/main.cpp.o"
   )

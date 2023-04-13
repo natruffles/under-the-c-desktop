@@ -1,2 +1,2 @@
-/usr/bin/ar qc libWeatherlite_lib.a CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o CMakeFiles/Weatherlite_lib.dir/main.cpp.o
+/usr/bin/ar qc libWeatherlite_lib.a CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.o CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o CMakeFiles/Weatherlite_lib.dir/main.cpp.o
 /usr/bin/ranlib libWeatherlite_lib.a

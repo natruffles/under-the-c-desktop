@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.o"
   "CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o"
   "CMakeFiles/Weatherlite_lib.dir/main.cpp.o"
   "libWeatherlite_lib.a"

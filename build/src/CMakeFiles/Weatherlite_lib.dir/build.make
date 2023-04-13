@@ -76,9 +76,22 @@ include src/CMakeFiles/Weatherlite_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/Weatherlite_lib.dir/flags.make
 
+src/CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.o: src/CMakeFiles/Weatherlite_lib.dir/flags.make
+src/CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.o: ../src/HttpRequest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/under-the-c-desktop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.o"
+	cd /workspaces/under-the-c-desktop/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.o -c /workspaces/under-the-c-desktop/src/HttpRequest.cpp
+
+src/CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.i"
+	cd /workspaces/under-the-c-desktop/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/under-the-c-desktop/src/HttpRequest.cpp > CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.i
+
+src/CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.s"
+	cd /workspaces/under-the-c-desktop/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/under-the-c-desktop/src/HttpRequest.cpp -o CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.s
+
 src/CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o: src/CMakeFiles/Weatherlite_lib.dir/flags.make
 src/CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o: ../src/Menu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/under-the-c-desktop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/under-the-c-desktop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o"
 	cd /workspaces/under-the-c-desktop/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o -c /workspaces/under-the-c-desktop/src/Menu.cpp
 
 src/CMakeFiles/Weatherlite_lib.dir/Menu.cpp.i: cmake_force
@@ -91,7 +104,7 @@ src/CMakeFiles/Weatherlite_lib.dir/Menu.cpp.s: cmake_force
 
 src/CMakeFiles/Weatherlite_lib.dir/main.cpp.o: src/CMakeFiles/Weatherlite_lib.dir/flags.make
 src/CMakeFiles/Weatherlite_lib.dir/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/under-the-c-desktop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/Weatherlite_lib.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/under-the-c-desktop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/Weatherlite_lib.dir/main.cpp.o"
 	cd /workspaces/under-the-c-desktop/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Weatherlite_lib.dir/main.cpp.o -c /workspaces/under-the-c-desktop/src/main.cpp
 
 src/CMakeFiles/Weatherlite_lib.dir/main.cpp.i: cmake_force
@@ -104,17 +117,19 @@ src/CMakeFiles/Weatherlite_lib.dir/main.cpp.s: cmake_force
 
 # Object files for target Weatherlite_lib
 Weatherlite_lib_OBJECTS = \
+"CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.o" \
 "CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o" \
 "CMakeFiles/Weatherlite_lib.dir/main.cpp.o"
 
 # External object files for target Weatherlite_lib
 Weatherlite_lib_EXTERNAL_OBJECTS =
 
+src/libWeatherlite_lib.a: src/CMakeFiles/Weatherlite_lib.dir/HttpRequest.cpp.o
 src/libWeatherlite_lib.a: src/CMakeFiles/Weatherlite_lib.dir/Menu.cpp.o
 src/libWeatherlite_lib.a: src/CMakeFiles/Weatherlite_lib.dir/main.cpp.o
 src/libWeatherlite_lib.a: src/CMakeFiles/Weatherlite_lib.dir/build.make
 src/libWeatherlite_lib.a: src/CMakeFiles/Weatherlite_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/under-the-c-desktop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libWeatherlite_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/under-the-c-desktop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libWeatherlite_lib.a"
 	cd /workspaces/under-the-c-desktop/build/src && $(CMAKE_COMMAND) -P CMakeFiles/Weatherlite_lib.dir/cmake_clean_target.cmake
 	cd /workspaces/under-the-c-desktop/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Weatherlite_lib.dir/link.txt --verbose=$(VERBOSE)
 
