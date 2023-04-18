@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/Weatherlite_run.dir/HttpRequest.cpp.o CMakeFiles/Weatherlite_run.dir/Menu.cpp.o CMakeFiles/Weatherlite_run.dir/main.cpp.o -o Weatherlite_run  /usr/lib/x86_64-linux-gnu/libcurl.so 
+/usr/bin/c++ CMakeFiles/Weatherlite_run.dir/HttpRequest.cpp.o CMakeFiles/Weatherlite_run.dir/Menu.cpp.o CMakeFiles/Weatherlite_run.dir/main.cpp.o -o Weatherlite_run  -Wl,-rpath,/usr/local/lib /usr/local/lib/libcurl.so.4.8.0 

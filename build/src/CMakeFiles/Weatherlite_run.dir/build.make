@@ -128,7 +128,7 @@ src/Weatherlite_run: src/CMakeFiles/Weatherlite_run.dir/HttpRequest.cpp.o
 src/Weatherlite_run: src/CMakeFiles/Weatherlite_run.dir/Menu.cpp.o
 src/Weatherlite_run: src/CMakeFiles/Weatherlite_run.dir/main.cpp.o
 src/Weatherlite_run: src/CMakeFiles/Weatherlite_run.dir/build.make
-src/Weatherlite_run: /usr/lib/x86_64-linux-gnu/libcurl.so
+src/Weatherlite_run: /usr/local/lib/libcurl.so.4.8.0
 src/Weatherlite_run: src/CMakeFiles/Weatherlite_run.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/under-the-c-desktop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Weatherlite_run"
 	cd /workspaces/under-the-c-desktop/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Weatherlite_run.dir/link.txt --verbose=$(VERBOSE)
