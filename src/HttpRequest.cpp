@@ -4,32 +4,35 @@
 #include <string>
 #include "HttpRequest.h"
 
+// Check if zipCode is a valid zip code according to USPS standards.
 bool HttpRequest::IsValidZipCode(std::string zipCode) {
-  // Check if zipCode is a valid zip code according to USPS standards.
   bool isValid = false;
   int inputSize = zipCode.size();
-  if (inputSize == 5 || inputSize == 10) {
+  if (inputSize == 5) {
     isValid = true;
     for (int i = 0; i < inputSize; i++) {
-      if (i == 5) {
-        if (zipCode[i] != '-') {
-          isValid = false;
-          break;
-        }
-      } else {
-        if (!isdigit(zipCode[i])) {
-          isValid = false;
-          break;
-        }
+      if (!std::isdigit(zipCode[i])) {
+        isValid = false;
+        break;
       }
     }
   }
   return isValid;
 }
 
-int HttpRequest::FetchURLTest() {  // Method tests if we are able to make an HTTP request to the API.
-  CURL* curl;            // Initialize cURL object.
-  CURLcode res;          // To store result of the request.
+// Define the WriteCallback function
+size_t HttpRequest::WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
+  size_t realsize = size * nmemb;
+  std::string* response = (std::string*)userp;
+  response->append((char*)contents, realsize);
+  return realsize;
+}
+
+// Sends an API request
+int HttpRequest::FetchURLTest() {
+  CURL* curl;
+  std::string response;
+  CURLcode res;
   std::string zipCode;
   std::cout << "Enter a valid zip code: ";
   std::cin >> zipCode;
@@ -44,23 +47,33 @@ int HttpRequest::FetchURLTest() {  // Method tests if we are able to make an HTT
   std::string apiKey = "095156f9188a2873b0a55d7981778817";
   std::string url =
       "http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode +
-      "&APPID=" + apiKey + "&units=imperial";  // URL to request.
+      "&APPID=" + apiKey + "&units=imperial";
 
-  curl_global_init(CURL_GLOBAL_DEFAULT);  // Initialize cURL library.
+  curl_global_init(CURL_GLOBAL_DEFAULT);
 
-  curl = curl_easy_init();  // Initialize easy cURL interface.
+  curl = curl_easy_init();
   if (curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());  // Set the URL to request.
-    res = curl_easy_perform(curl);                      // Perform the request.
-    std::cout << res << std::endl;
+    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
+    res = curl_easy_perform(curl);
 
-    if (res != CURLE_OK) {  // Check if the request was successful.
+    while (response.length() < 46) {
+      std::cout << "Entered zip code was invalid. Enter a valid zip code: ";
+      std::cin >> zipCode;
+      std::cout << std::endl;
+      url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + "&APPID=" + apiKey + "&units=imperial";
+      curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+      response.clear();
+      res = curl_easy_perform(curl);
+    }
+
+    std::cout << response << std::endl;
+
+    if (res != CURLE_OK) {
       std::cerr << "Error: " << curl_easy_strerror(res) << std::endl;
     }
-    curl_easy_cleanup(curl);  // Clean up the cURL object.
+    curl_easy_cleanup(curl);
   }
-
-  curl_global_cleanup();  // Clean up the cURL library.
-
   return 0;
 }
